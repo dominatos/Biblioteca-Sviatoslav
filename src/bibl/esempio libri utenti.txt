@@ -1,0 +1,11 @@
+Titolo del libro	Autore	ISBN
+Il Maestro e Margherita	Michail Bulgakov	978-5-389-07417-6
+Delitto e castigo	Fëdor Dostoevskij	978-5-17-118366-4
+Guerra e pace	Lev Tolstoj	978-5-389-05925-8
+Anna Karenina	Lev Tolstoj	978-5-17-118367-1
+L'idiota	Fëdor Dostoevskij	978-5-389-05926-5
+
+Nome	Cognome	Numero
+Ivan	Ivanov	001
+Sergey	Sergeev	002
+Alexey	Alexeev	003
