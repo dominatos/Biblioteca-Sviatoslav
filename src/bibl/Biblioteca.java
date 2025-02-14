@@ -78,7 +78,7 @@ for(int i=0;i<this.arruser1.length;i++){
                     if (this.arruser1[j] != null && this.arruser1[j].getIDUtente().equals(idUtente)) {
                         utenteTrovato = true;
                         this.arruser1[j].restituireLibro(this.arrlibri[i]);
-                        //this.arrlibri[i].restituireLibro();
+                        this.arrlibri[i].restituireLibro();
                         return;
                     }
                 }
