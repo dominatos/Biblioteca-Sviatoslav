@@ -36,7 +36,9 @@ while(true) {
         b.registraUtente(new Utente(nome, cognome, IDUtente));
     } else if (sinoval.equals("2")) {
         System.out.println("Quanti libri vuoi aggungere?");
+
         int q = Integer.parseInt(sc.nextLine());
+
         for (int i = 0; i < q; i++) {
             System.out.println("Inserisci nome della libro:");
             String nome = sc.nextLine();
