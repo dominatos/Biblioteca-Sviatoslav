@@ -36,7 +36,7 @@ while(true) {
         b.registraUtente(new Utente(nome, cognome, IDUtente));
     } else if (sinoval.equals("2")) {
         System.out.println("Quanti libri vuoi aggungere?");
-
+// devo implementare verifica che e scritto numero e non String
         int q = Integer.parseInt(sc.nextLine());
 
         for (int i = 0; i < q; i++) {
