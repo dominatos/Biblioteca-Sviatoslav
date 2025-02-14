@@ -1,9 +1,14 @@
-Titolo del libro	Autore	ISBN
-Il Maestro e Margherita	Michail Bulgakov	978-5-389-07417-6
+Titolo del libro	Autore				ISBN
+Amore rubato		Charmaine Pauls		1643664743
 Delitto e castigo	Fëdor Dostoevskij	978-5-17-118366-4
-Guerra e pace	Lev Tolstoj	978-5-389-05925-8
-Anna Karenina	Lev Tolstoj	978-5-17-118367-1
-L'idiota	Fëdor Dostoevskij	978-5-389-05926-5
+Guerra e pace		Lev Tolstoj			978-5-389-05925-8
+Anna Karenina		Lev Tolstoj			978-5-17-118367-1
+L'idiota			Fëdor Dostoevskij	978-5-389-05926-5
+Onyx storm			Rebecca Yarros		8820077353
+Hamartía			Rossana Soldano		8804773375
+Principe crudele	Sophie Lark			1643663607
+
+
 
 Nome	Cognome	Numero
 Ivan	Ivanov	001
