@@ -66,6 +66,7 @@ while(true) {
         b.mostraCatalogo();
     } else if (sinoval.equals("6")) {
         b.utentiRegistrati();
+        
     } else if (sinoval.equals("0")) {
         break;
     } else {

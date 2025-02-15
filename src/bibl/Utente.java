@@ -27,10 +27,20 @@ public class Utente {
   }
   public void prendereInPrestito(Libro libro){
       if(libro.getDisponibilita())
-      {
+      { int nonZ=0;
+          for (Libro num : this.listaPrestiti) {
+              if (num != null) {
+
+                  nonZ++;
+              }
+          }
+          if (nonZ >= 3) {
+              System.out.println("Hai già preso 3 libri, non puoi prenderne altri.");
+              return;
+          }
           for(int i=0;i<this.listaPrestiti.length;i++)
           {
-              if(this.listaPrestiti[i]==null)
+              if(this.listaPrestiti[i]==null&& nonZ<3)
               {
                   this.listaPrestiti[i]=libro;
                   libro.prestareLibro();
@@ -48,14 +58,17 @@ public class Utente {
   }
   public void restituireLibro(Libro libro){
       for(int i=0;i<this.listaPrestiti.length;i++)
-      {
-          if(this.listaPrestiti[i]!=null && this.listaPrestiti[i].getISBN().equals(libro.getISBN()))
+      {if(!this.listaPrestiti[i].getISBN().equals(libro.getISBN())){System.out.println("Il libro non e disponibile!"); return;}
+         else if(this.listaPrestiti[i]!=null)
           {
 
-              libro.restituireLibro();
+              if(this.listaPrestiti[i].getISBN().equals(libro.getISBN()))
+              {
+              libro.restituireLibro2();
               System.out.println("\n"+libro.getTitolo()+" e restituita");
               this.listaPrestiti[i]=null;
-              return;
+              return;}
+
           }
 
       }

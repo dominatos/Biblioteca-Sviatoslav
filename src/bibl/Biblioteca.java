@@ -39,13 +39,14 @@ for(int i=0;i<this.arruser1.length;i++){
             if (this.arrlibri[i] != null && this.arrlibri[i].getDisponibilita() && this.arrlibri[i].getISBN().equals(ISBN)) {
                 libroTrovato = true;
 
-                // Пройти по всем пользователям и найти нужного
+
                 for (int j = 0; j < this.arruser1.length; j++) {
                     if (this.arruser1[j] != null && this.arruser1[j].getIDUtente().equals(IDUtente)) {
                         utenteTrovato = true;
 
                         this.arruser1[j].prendereInPrestito(this.arrlibri[i]);
-                      this.arrlibri[i].prestareLibro();
+
+                        return;
                        }
                 }
 
@@ -78,7 +79,7 @@ for(int i=0;i<this.arruser1.length;i++){
                     if (this.arruser1[j] != null && this.arruser1[j].getIDUtente().equals(idUtente)) {
                         utenteTrovato = true;
                         this.arruser1[j].restituireLibro(this.arrlibri[i]);
-                        this.arrlibri[i].restituireLibro();
+                        //this.arrlibri[i].restituireLibro2();
                         return;
                     }
                 }

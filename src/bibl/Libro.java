@@ -43,7 +43,7 @@ public class Libro {
 
         return this.disponibilita;
    }
-   public boolean restituireLibro()
+   public boolean restituireLibro2()
    {
        if(!this.disponibilita)
        { this.disponibilita = true; }
