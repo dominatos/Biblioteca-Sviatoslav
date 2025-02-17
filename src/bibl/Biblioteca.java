@@ -71,6 +71,10 @@ for(int i=0;i<this.arruser1.length;i++){
 
 
         for (int i = 0; i < this.arrlibri.length; i++) {
+            if(!this.arrlibri[i].getISBN().equals(ISBN)){
+                System.out.println("Errore, il libro non trovato.");
+                break;
+            }
             if (this.arrlibri[i] != null && this.arrlibri[i].getDisponibilita()==false && this.arrlibri[i].getISBN().equals(ISBN)) {
                 libroTrovato = true;
 
@@ -89,7 +93,9 @@ for(int i=0;i<this.arruser1.length;i++){
                     System.out.println("Errore, utente non trovato.");
                     return;
                 }
+
             }
+
         }
 
 
