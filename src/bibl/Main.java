@@ -29,23 +29,62 @@ while(true) {
     if (sinoval.equals("1")) {
         System.out.println("Inserisci Nome del utente:: ");
         String nome = sc.nextLine();
+//        int max = 1000;
+//        int min = 1;
+//        int range = max - min + 1;
+//
+//
+//
+//        int rand = (int)(Math.random() * range) + min;
+
+        // String nome = "nome"+rand;
         System.out.println("Inserisci Cognome:: ");
         String cognome = sc.nextLine();
+        //String cognome ="cognome"+rand;
         System.out.println("Inserisci IDUtente:: ");
+
         String IDUtente = sc.nextLine();
-        b.registraUtente(new Utente(nome, cognome, IDUtente));
+        //String IDUtente="IDUtente"+rand;
+
+        Utente r=new Utente(nome, cognome, IDUtente);
+        System.out.println(r.getIDUtente());
+        b.registraUtente(r);
     } else if (sinoval.equals("2")) {
         System.out.println("Quanti libri vuoi aggungere?");
-// devo implementare verifica che e scritto numero e non String
-        int q = Integer.parseInt(sc.nextLine());
 
+        String input = sc.nextLine();
+        int q=0;
+        if (input.matches("\\d+")) {
+            q = Integer.parseInt(input);
+
+        } else {
+
+            System.out.println("Errore: devi insere il numero positivo e non double!");
+        }
         for (int i = 0; i < q; i++) {
+
+//            int max = 1000;
+//            int min = 1;
+//            int range = max - min + 1;
+//
+//            // generate random numbers within 1 to 10
+//
+//            int rand = (int)(Math.random() * range) + min;
+
+
+
             System.out.println("Inserisci nome della libro:");
             String nome = sc.nextLine();
+            //String nome="libro"+ rand;
             System.out.println("Inserisci autore della libro:");
             String autore = sc.nextLine();
+            //String autore="autore"+rand;
             System.out.println("Inserisci ISBN della libro:");
             String ISBN = sc.nextLine();
+//                                            ISBN548 ISBN88  ISBN86 IDUtente41 IDUtente372
+                                            //ISBN990 IDUtente344
+            //String ISBN ="ISBN"+rand;
+            System.out.println(ISBN);
             b.aggiungiLibro(new Libro(nome, autore, ISBN));
         }
     } else if (sinoval.equals("3")) {

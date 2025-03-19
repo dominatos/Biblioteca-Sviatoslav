@@ -5,7 +5,7 @@ public class Utente {
    private String cognome;
    private String IDUtente;
    private Libro[] listaPrestiti;
-
+    private boolean isNulllistaPrestiti;
    public Utente(String nome, String cognome, String IDUtente) {
        this.nome = nome;
        this.cognome = cognome;
@@ -24,6 +24,9 @@ public class Utente {
   public String getIDUtente() {
 
        return this.IDUtente;
+  }
+  public Libro[] getListaPrestiti() {
+       return this.listaPrestiti;
   }
   public void prendereInPrestito(Libro libro){
       if(libro.getDisponibilita())
@@ -58,29 +61,45 @@ public class Utente {
   }
   public void restituireLibro(Libro libro){
       for(int i=0;i<this.listaPrestiti.length;i++)
-      {if(!this.listaPrestiti[i].getISBN().equals(libro.getISBN())){System.out.println("Il libro non e disponibile!"); return;}
-         else if(this.listaPrestiti[i]!=null)
+      {
+          if(this.listaPrestiti[i]==null)
           {
+              //System.out.println("Errore,Il utente non ha i libri in prestito");
+              break;
+          }
 
-              if(this.listaPrestiti[i].getISBN().equals(libro.getISBN()))
-              {
+          else if(this.listaPrestiti[i].getISBN().equals(libro.getISBN()))
+          {
               libro.restituireLibro2();
               System.out.println("\n"+libro.getTitolo()+" e restituita");
               this.listaPrestiti[i]=null;
-              return;}
-
+              return;
+          }
+          else if(!this.listaPrestiti[i].getISBN().equals(libro.getISBN())){
+              System.out.println("Il libro non e trovata nella tua lista di prestiti!");
+              break;
           }
 
       }
       System.out.println("\n Non e tua libro");
   }
-
+    public boolean isNulllistaPrestiti(){
+       if(this.listaPrestiti==null)
+       {
+           return this.isNulllistaPrestiti=true;
+       }
+       return this.isNulllistaPrestiti=false;
+  }
+    public Libro[] listaPrestiti(){
+       return this.listaPrestiti;
+    }
   public void mostraLibriInPrestito() {
-
+       if(this.listaPrestiti[0]!=null){
+      System.out.println("Libri in prestiti:");
       for (int i = 0; i < this.listaPrestiti.length; i++) {
           if (this.listaPrestiti[i] != null) {
-              System.out.println("Libri in prestiti:\n (" + i + ") " + listaPrestiti[i].getTitolo()+"\n");
-          }
+              System.out.println("("+(i+1) + ") " + listaPrestiti[i].getTitolo()+" "+listaPrestiti[i].getISBN()+"\n");
+          }}
       }
   }
 

@@ -71,11 +71,18 @@ for(int i=0;i<this.arruser1.length;i++){
 
 
         for (int i = 0; i < this.arrlibri.length; i++) {
-            if(!this.arrlibri[i].getISBN().equals(ISBN)){
-                System.out.println("Errore, il libro non trovato.");
-                break;
-            }
-            if (this.arrlibri[i] != null && this.arrlibri[i].getDisponibilita()==false && this.arrlibri[i].getISBN().equals(ISBN)) {
+//            if(!this.arrlibri[i].getISBN().equals(ISBN)){
+//                System.out.println(ISBN);
+//                System.out.println(this.arrlibri[i].getISBN());
+//                System.out.println("Errore, il libro non trovato.");
+//                //break;
+//            }
+            if(this.arruser1[i].isNulllistaPrestiti()){System.out.println("Errore, utente non ha libri in prestiti.");
+                return;}
+
+
+
+            if (this.arrlibri[i] != null && this.arrlibri[i].getDisponibilita()==false && this.arrlibri[i].getISBN().equals(ISBN) ) {
                 libroTrovato = true;
 
                 // Пройти по всем пользователям и найти нужного
@@ -129,9 +136,28 @@ for(int i=0;i<this.arruser1.length;i++){
             Libro v = this.arrlibri[i];
 
             if(v instanceof Libro) {
-                Libro a = (Libro) v;
 
-                System.out.println(a.getDettagli());
+                System.out.println((v).getDettagli());
+                for (int t = 0; t < this.arruser1.length; t++) {
+                    Utente x= arruser1[t];
+
+                    if(x instanceof Utente )
+                    {
+                        Utente u=(Utente)x;
+                        for (int y = 0; y < x.listaPrestiti().length; y++) {
+                            if(x.listaPrestiti()[y] != null && x.listaPrestiti()[y].getISBN().equals(v.getISBN()))
+                            {
+                                System.out.println("In prestito da utente "+u.getNome()+" "+u.getCognome()+" con id:" +u.getIDUtente());
+                                break;
+                            }
+
+                        }
+
+                       // System.out.println("\n"+u.getNome()+" "+u.getCognome()+" "+u.getIDUtente());
+                       // u.mostraLibriInPrestito();
+                    }
+
+                }
             }
 
         }
