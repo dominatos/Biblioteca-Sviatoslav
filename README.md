@@ -1,7 +1,7 @@
 Resoluzione al esercizio:<br>
 
 
-Traccia dell'esercizio: Sistema di Gestione Biblioteca
+Traccia dell'esercizio: Sistema di Gestione Biblioteca<br>
 Descrizione:
 Realizzare un sistema Java per gestire una biblioteca, in cui si possono registrare libri,
 gestire prestiti e restituire libri.
