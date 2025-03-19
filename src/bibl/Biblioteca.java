@@ -24,12 +24,13 @@ for(int i=0;i<this.arruser1.length;i++){
                 return;
             }
             else if(this.arrlibri[arrlibri.length-1]!=null){
-                System.out.println("Hai raggiunto limito di biblioteca!");
+                System.out.println("Hai raggiunto limito di biblioteca!Max e"+(arrlibri.length)+" libri!");
                 return;
             }
         }
 
     }
+
     public void prestitoLibro(String IDUtente, String ISBN) {
         boolean libroTrovato = false;
         boolean utenteTrovato = false;
@@ -161,5 +162,9 @@ for(int i=0;i<this.arruser1.length;i++){
             }
 
         }
+    }
+
+    public Libro[] getArrlibri() {
+        return this.arrlibri;
     }
 }

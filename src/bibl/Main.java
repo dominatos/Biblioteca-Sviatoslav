@@ -54,7 +54,10 @@ while(true) {
 
         String input = sc.nextLine();
         int q=0;
+
         if (input.matches("\\d+")) {
+
+
             q = Integer.parseInt(input);
 
         } else {
@@ -62,7 +65,10 @@ while(true) {
             System.out.println("Errore: devi insere il numero positivo e non double!");
         }
         for (int i = 0; i < q; i++) {
-
+            if(b.getArrlibri().length<q){
+                System.out.println("Hai raggiunto limito di biblioteca!Max libri da aggungere e"+(b.getArrlibri().length)+" libri!");
+                break;
+            }
 //            int max = 1000;
 //            int min = 1;
 //            int range = max - min + 1;
