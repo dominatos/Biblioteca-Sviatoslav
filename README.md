@@ -1,4 +1,4 @@
-Resoluzione al esercizio:
+Resoluzione al esercizio:<br>
 
 
 Traccia dell'esercizio: Sistema di Gestione Biblioteca
